@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Covstats</string>
+    <string name="progressCounter">progressCounter</string>
+    <string name="resultString">Result</string>
+    <string name="Covid19ResultString">30%</string>
+    <string name="ColdResultString">30%</string>
+    <string name="Covid19String">Covid-19</string>
+    <string name="ColdString">Cold</string>
+    <string name="FluString">Flu</string>
+</resources>

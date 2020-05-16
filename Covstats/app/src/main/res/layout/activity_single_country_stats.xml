@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scroll_view_single_country"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true"
+    tools:context=".Activities.SingleCountryStatsActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/mainColor"
+        tools:context=".Activities.SingleCountryStatsActivity">
+
+
+        <TextView
+            android:id="@+id/text_view_total_deaths_sc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:text="Death Cases:"
+            android:textColor="@color/whiteColor"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/text_death_cases_value"
+            app:layout_constraintStart_toStartOf="@+id/text_death_cases_value" />
+
+        <TextView
+            android:id="@+id/text_corona_total_cases_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:inputType="number"
+            android:text="Loading..."
+            android:textColor="@color/yellowColor"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/text_death_cases_value"
+            app:layout_constraintHorizontal_bias="0.271"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_total_deaths_sc" />
+
+        <TextView
+            android:id="@+id/text_view_total_cases_sc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:text="Total Cases:"
+            android:textColor="@color/whiteColor"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/text_corona_total_cases_value"
+            app:layout_constraintStart_toStartOf="@+id/text_corona_total_cases_value" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="1dp"
+            android:layout_height="35dp"
+            android:background="@color/grayColor"
+            app:layout_constraintEnd_toStartOf="@+id/text_death_cases_value"
+            app:layout_constraintStart_toEndOf="@+id/text_view_total_cases_sc"
+            app:layout_constraintTop_toTopOf="@+id/text_view_total_deaths_sc" />
+
+        <TextView
+            android:id="@+id/text_death_cases_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="152dp"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:inputType="number"
+            android:text="Loading..."
+            android:textColor="@color/redColor"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.449"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="35dp"
+            android:background="@color/grayColor"
+            app:layout_constraintEnd_toStartOf="@+id/text_death_rate_value"
+            app:layout_constraintStart_toEndOf="@+id/text_view_total_deaths_sc"
+            app:layout_constraintTop_toTopOf="@+id/text_view_total_deaths_sc" />
+
+        <TextView
+
+            android:id="@+id/text_death_rate_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:inputType="number"
+            android:text="Loading..."
+            android:textColor="@color/orangeColor"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.65"
+            app:layout_constraintStart_toEndOf="@+id/text_death_cases_value"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_total_deaths_sc" />
+
+        <TextView
+            android:id="@+id/text_view_death_rate_sc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:text="Death Rate:"
+            android:textColor="@color/whiteColor"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/text_death_rate_value"
+            app:layout_constraintStart_toStartOf="@+id/text_death_rate_value" />
+
+        <TextView
+            android:id="@+id/text_view_country_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:gravity="center_horizontal"
+            android:text="Country Name"
+            android:textColor="@color/whiteColor"
+            android:textSize="32sp"
+            android:textStyle=""
+            app:layout_constraintBottom_toTopOf="@+id/text_view_total_deaths_sc"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_world_death_cases_today_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="44dp"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:inputType="number"
+            android:text="Loading..."
+            android:textColor="@color/redColor"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/text_death_cases_value"
+            app:layout_constraintTop_toBottomOf="@+id/text_death_cases_value" />
+
+        <TextView
+            android:id="@+id/text_view_deaths_today_sc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:text="Death Cases Today:"
+            android:textColor="@color/whiteColor"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/text_world_death_cases_today_value"
+            app:layout_constraintStart_toStartOf="@+id/text_world_death_cases_today_value" />
+
+        <TextView
+            android:id="@+id/text_view_cases_today_sc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:text="Cases Today:"
+            android:textColor="@color/whiteColor"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/text_total_cases_today_value"
+            app:layout_constraintStart_toStartOf="@+id/text_total_cases_today_value" />
+
+        <TextView
+            android:id="@+id/text_total_cases_today_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:inputType="number"
+            android:text="Loading..."
+            android:textColor="@color/yellowColor"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/text_corona_total_cases_value"
+            app:layout_constraintTop_toTopOf="@+id/text_world_death_cases_today_value" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="35dp"
+            android:background="@color/grayColor"
+            app:layout_constraintEnd_toStartOf="@+id/text_view_deaths_today_sc"
+            app:layout_constraintStart_toEndOf="@+id/text_view_total_cases_sc"
+            app:layout_constraintTop_toTopOf="@+id/text_view_deaths_today_sc" />
+
+        <TextView
+            android:id="@+id/chart_total_cases_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:fontFamily="sans-serif"
+            android:gravity="center_horizontal"
+            android:text="Total Cases Over Time:"
+            android:textColor="@color/whiteColor"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.504"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_world_death_cases_today_value" />
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/chart_total_cases"
+            android:layout_width="0dp"
+            android:layout_height="300dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="46dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            app:layout_constraintBottom_toTopOf="@+id/chart_total_deaths_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/chart_total_cases_label"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/chart_total_deaths_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:fontFamily="sans-serif"
+            android:gravity="center_horizontal"
+            android:text="Death Cases Overtime:"
+            android:textColor="@color/whiteColor"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/chart_total_deaths"/>
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/chart_total_deaths"
+            android:layout_width="0dp"
+            android:layout_height="300dp"
+            android:layout_marginBottom="46dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            app:layout_constraintBottom_toTopOf="@id/chart_death_rate_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/chart_death_rate_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:gravity="center_horizontal"
+            android:text="Death Rate Over Time:"
+            android:textColor="@color/whiteColor"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/chart_death_rate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/chart_death_rate"
+            android:layout_width="0dp"
+            android:layout_height="300dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/image_view_expand_1"
+            android:layout_width="60dp"
+            android:layout_height="27dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/chart_total_cases"
+            app:srcCompat="@drawable/ic_expand_more_white" />
+
+        <ImageView
+            android:id="@+id/image_view_expand_2"
+            android:layout_width="60dp"
+            android:layout_height="27dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/chart_total_deaths"
+            app:srcCompat="@drawable/ic_expand_more_white" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

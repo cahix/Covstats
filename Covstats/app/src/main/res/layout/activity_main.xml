@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:id="@+id/scroll_pane"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".Activities.MainActivity">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/mainColor"
+        tools:context=".Activities.MainActivity">
+
+        <TextView
+
+            android:id="@+id/text_death_rate_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:inputType="number"
+            android:text="Loading..."
+            android:textColor="@color/orangeColor"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/text_death_total_cases"
+            app:layout_constraintTop_toBottomOf="@+id/text_death_cases" />
+
+        <TextView
+            android:id="@+id/text_corona_total_cases"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:inputType="number"
+            android:text="Loading..."
+            android:textColor="@color/yellowColor"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/text_death_total_cases"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_death_cases" />
+
+        <TextView
+            android:id="@+id/text_death_total_cases"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:inputType="number"
+            android:text="Loading..."
+            android:textColor="@color/redColor"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_title" />
+
+        <View
+            android:id="@+id/view3"
+            android:layout_width="1dp"
+            android:layout_height="35dp"
+            android:background="@color/grayColor"
+            app:layout_constraintEnd_toStartOf="@+id/text_death_total_cases"
+            app:layout_constraintStart_toEndOf="@+id/text_total_cases"
+            app:layout_constraintTop_toTopOf="@+id/text_death_cases" />
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="1dp"
+            android:layout_height="35dp"
+            android:background="@color/grayColor"
+            app:layout_constraintEnd_toStartOf="@+id/text_death_rate_value"
+            app:layout_constraintStart_toEndOf="@+id/text_death_cases"
+            app:layout_constraintTop_toTopOf="@+id/text_death_rate_label" />
+
+        <TextView
+            android:id="@+id/text_death_rate_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:text="Recovered Cases:"
+            android:textColor="@color/whiteColor"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/text_death_rate_value"
+            app:layout_constraintStart_toStartOf="@+id/text_death_rate_value" />
+
+        <TextView
+            android:id="@+id/text_death_cases"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:text="Death Cases:"
+            android:textColor="@color/whiteColor"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/text_death_total_cases"
+            app:layout_constraintStart_toStartOf="@+id/text_death_total_cases" />
+
+
+        <TextView
+            android:id="@+id/text_total_cases"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:text="Total Cases:"
+            android:textColor="@color/whiteColor"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/text_corona_total_cases"
+            app:layout_constraintStart_toStartOf="@+id/text_corona_total_cases" />
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/chart_total_cases_comparison"
+            android:layout_width="0dp"
+            android:layout_height="300dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_total_cases_by_country" />
+
+        <TextView
+            android:id="@+id/text_view_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif"
+            android:gravity="center_horizontal"
+            android:text="COVID-19"
+            android:textColor="@color/whiteColor"
+            android:textSize="20sp"
+            android:textStyle=""
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_view_worldwide_statistics"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Worldwide statistics"
+            android:textColor="@color/whiteColor"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/text_death_total_cases"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_title"
+            app:layout_constraintVertical_bias="0.255" />
+
+        <Button
+            android:id="@+id/button_show_statistics"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/roundedbutton_lightblue"
+            android:text="Statistics"
+            android:textColor="@color/whiteColor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.15"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/chart_total_cases_comparison" />
+
+        <Button
+            android:id="@+id/button_start"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:background="@drawable/roundedbutton_lightblue"
+            android:text="Check Symptoms"
+            android:textColor="@color/whiteColor"
+            app:layout_constraintBottom_toBottomOf="@+id/button_show_statistics"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.85"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/button_show_statistics" />
+
+        <Button
+            android:id="@+id/button_info"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/info_white_48"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_view_cases_today"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:text="Cases Today:"
+            android:textColor="@color/whiteColor"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@+id/text_corona_total_cases_today_value"
+            app:layout_constraintStart_toStartOf="@+id/text_corona_total_cases_today_value" />
+
+        <TextView
+            android:id="@+id/text_corona_total_cases_today_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:inputType="number"
+            android:text="Loading..."
+            android:textColor="@color/yellowColor"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/text_corona_total_cases"
+            app:layout_constraintTop_toTopOf="@+id/text_world_death_cases_today_value" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="35dp"
+            android:background="@color/grayColor"
+            app:layout_constraintEnd_toStartOf="@+id/text_death_total_cases"
+            app:layout_constraintStart_toEndOf="@+id/text_total_cases"
+            app:layout_constraintTop_toTopOf="@+id/text_world_death_cases_today_label" />
+
+        <TextView
+            android:id="@+id/text_world_death_cases_today_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="44dp"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:inputType="number"
+            android:text="Loading..."
+            android:textColor="@color/redColor"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/text_death_total_cases"
+            app:layout_constraintTop_toBottomOf="@+id/text_death_total_cases" />
+
+        <TextView
+            android:id="@+id/text_world_death_cases_today_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:gravity="left"
+            android:text="Today:"
+            android:textColor="@color/whiteColor"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/text_world_death_cases_today_value"
+            app:layout_constraintStart_toStartOf="@+id/text_death_cases" />
+
+        <TextView
+            android:id="@+id/text_view_total_cases_by_country"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:text="Total cases Compared"
+            android:textColor="@color/whiteColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_world_death_cases_today_value" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
